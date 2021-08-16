@@ -34,10 +34,8 @@ Follow up: Could you solve it without loops/recursion?
 
 class Solution {
     public boolean isPowerOfThree(int n) {
-        
-        if(n==0)
-            return false;
-        
-        return (int) (Math.ceil(Math.log(n)/Math.log(3))) == (int) (Math.floor(Math.log(n)/Math.log(3)));
+     
+        double a = Math.log(n) / Math.log(3);
+        return Math.abs(a - Math.round(a)) < 1e-10; //here, 1e-10 = 1 x (10)^(-10), i.e. 10 to the power of (-10) which equals to 0.0000000001
     }
 }
