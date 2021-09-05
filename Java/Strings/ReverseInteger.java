@@ -32,7 +32,46 @@ Constraints:
 --------------------------------------------------------------------------------------------------------------------------------------------------
 */
 
-//SOLUTION:
+//SOLUTION - 1 :
+
+class Solution {
+    public int reverse(int x) {
+        if(x == 0){
+            return 0;
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        
+        int num = x;
+        
+        while(num != 0){
+            if(num < 0){
+                sb.append("-");
+                num *= -1;
+            }
+            
+            int rem = num%10;
+            sb.append(rem);
+            num /= 10;
+        }
+        
+        try{
+            int result = Integer.parseInt(sb.toString());
+            return result;
+        }
+        catch(Exception e){
+            
+            return 0;
+        }
+    }
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//SOLUTION - 2 :
 
 class Solution {
     public int reverse(int x) {
